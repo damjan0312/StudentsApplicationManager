@@ -1,0 +1,21 @@
+<div class="container">
+    <nav id="navbar">
+        <div id="header">
+            <h2>Internship Selection Spring 2020</h2>
+        </div>
+    </nav>
+    <div id="read">
+        <read-applications (applicationForUpdate)="reciveApplicationForUpdate($event)"></read-applications>
+    </div>
+    <div id="create">
+        <create-application [updateApplication]="updateApp"></create-application>
+    </div>
+    <footer>
+        <p class="footer-text">Internship Selection Spring 2020</p>
+        <p class="footer-text">Damjan Mladenovic</p>
+    </footer>
+
+
+</div>
+
+<router-outlet></router-outlet>

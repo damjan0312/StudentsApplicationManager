@@ -1,0 +1,112 @@
+.container{
+    border: 2px solid #ddd;
+    margin: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+#header{
+    color: white;
+    background-color: rgba(0, 96, 109, 0.87);
+    margin-bottom: 3%;
+}
+.form-div{
+    display:flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+
+}
+#column1{
+    flex: 50%;
+    margin:auto;
+}
+#column2{
+    flex: 50%;
+    margin: auto;
+}
+#column3{
+
+    flex:100%;
+}
+
+input, select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color:  rgb(196, 209, 233);
+  }
+  textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color:  rgb(196, 209, 233);
+    resize: none;
+  }
+.button {
+    background-color: rgb(57, 99, 155);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: grab;
+  }
+.button:disabled{
+    background-color:#a5a5a5
+}
+
+.align-control-validation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.validation-div{
+    flex: 10%;
+    align-self: center;
+}
+.control {
+    flex: 50%;
+    align-self: flex-end;
+    margin-left: 20%;
+}
+
+#cancelUpdate {
+    float:right;
+    background-color: rgba(255, 0, 0, 0.568);
+}
+#cancelUpdate:hover::after {
+    /* ------- THIS IS THE MAGIC ----------------*/
+    content: attr(data-message);
+    font-size: 0.75rem;
+}
+
+
+.checkbox, .radio {
+  margin: 0 20% 0 20%;  
+  border-radius: 10px;
+}
+.radio-label{
+    margin-right: 0;
+    margin-left: -3px;
+}
+
+.checkbox-input, .radio-input{
+    transform: scale(1.5);
+}
+

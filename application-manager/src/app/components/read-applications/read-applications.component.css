@@ -1,0 +1,58 @@
+.container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* margin:30px; 
+    width:100%;*/
+    overflow-x: auto; 
+    width: 100%;
+}
+#students{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#students td {
+    white-space: nowrap;  
+    text-overflow:ellipsis; 
+    overflow: hidden; 
+    max-width: 200px;
+}
+#students td, #students th {
+    border: 1px solid #ddd;
+    padding: 2px 8px 2px 8px;
+    
+}
+#students tr:nth-child(even){
+    background-color: #f2f2f21f;
+}
+
+#students tr:hover {
+    background-color: rgb(134, 162, 212);
+}
+
+#students th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    background-color: rgba(0, 111, 131, 0.452);
+    color: white;
+  }
+
+  .button {
+   
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: grab;
+  }
+
+  #delete {
+    background-color: rgb(209, 25, 25);
+  }
+  #update {
+    background-color: rgb(105, 207, 46);
+  }

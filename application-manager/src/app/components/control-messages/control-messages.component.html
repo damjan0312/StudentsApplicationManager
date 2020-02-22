@@ -1,0 +1,6 @@
+<div class="container" *ngIf="errorMessage !== null">
+    <b>{{errorMessage}}</b>
+</div>
+<div class="container" *ngIf="errorMessage === null && !this.control.touched">
+    <b>*</b>
+</div>
