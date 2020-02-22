@@ -1,119 +1,125 @@
 <div class="container">
     <div id="header">
         <h2>Create new Application</h2>
-        <button id="cancelUpdate" class="button" data-message=" -Cancel update, reset form-" *ngIf="cancelUpdate === true"
-            (click)="resetForm()">X</button>
+
+    </div>
+    <div class="tooltip" id="button-div">
+        <button id="cancelUpdate" class="button" data-message=" -Cancel update, reset form-"
+            *ngIf="cancelUpdate === true" (click)="resetForm()">X</button>
+        <span *ngIf="cancelUpdate === true" class="tooltiptext">Cancel update, reset form</span>
     </div>
 
 
     <form class="form-div" [formGroup]="applicationForm" (submit)="createApplication()">
-        <div id="column1">
-            <div>
-                <label>Full Name</label><br>
-                <div class="align-control-validation">
-                    <input class="control" type="text" formControlName="name">
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('name')">
-                    </control-messages>
+        <div id="col1-col2">
+            <div id="column1">
+                <div>
+                    <label>Full Name</label><br>
+                    <div class="align-control-validation">
+                        <input class="control" type="text" formControlName="name">
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('name')">
+                        </control-messages>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Email</label><br>
+                    <div class="align-control-validation">
+                        <input class="control" type="email" formControlName="email" required>
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('email')">
+                        </control-messages>
+                    </div>
+                </div>
+                <div>
+                    <label>Age</label><br>
+                    <div class="align-control-validation">
+                        <input class="control" type="number" formControlName="age" required>
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('age')">
+                        </control-messages>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Phone number</label><br>
+                    <div class="align-control-validation">
+                        <input class="control" type="tel" formControlName="phone_number" required>
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('phone_number')">
+                        </control-messages>
+
+                    </div>
+                </div>
+
+                <div>
+                    <div class="align-control-validation">
+                        <label class="control">Preffered way of communication</label><br>
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('phone_or_email')">
+                        </control-messages>
+                    </div>
+                    <input class="radio-input" type="radio" formControlName="phone_or_email" value="Email">
+                    <label>
+                        Email
+                    </label>
+
+                    <br />
+                    <input class="radio-input" type="radio" formControlName="phone_or_email" value="Phone">
+                    <label>
+                        Phone
+                    </label>
+
+                </div>
+
+
+                <div>
+                    <label>English level</label><br>
+                    <div class="align-control-validation">
+                        <select class="control" formControlName="english_level">
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                        <control-messages class="validation-div" [control]=" this.applicationForm.get('english_level')">
+                        </control-messages>
+                    </div>
                 </div>
             </div>
+            <div id="column2">
 
-            <div>
-                <label>Email</label><br>
-                <div class="align-control-validation">
-                    <input class="control" type="email" formControlName="email" required>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('email')">
-                    </control-messages>
+                <div>
+                    <label>Avaliable to Start</label><br>
+                    <div class="align-control-validation">
+                        <input class="control" type="Date" dateformat="DD MMMM YYYY"
+                            formControlName="available_to_start" required>
+                        <control-messages class="validation-div"
+                            [control]="this.applicationForm.get('available_to_start')">
+                        </control-messages>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Age</label><br>
-                <div class="align-control-validation">
-                    <input class="control" type="number" formControlName="age" required>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('age')">
-                    </control-messages>
+                <div>
+                    <label>Technical Skills and Courses</label><br>
+                    <div class="align-control-validation">
+                        <textarea class="control" type="text" formControlName="skills_courses" cols="40" rows="5"
+                            required></textarea>
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('skills_courses')">
+                        </control-messages>
+                    </div>
                 </div>
-            </div>
-
-            <div>
-                <label>Phone number</label><br>
-                <div class="align-control-validation">
-                    <input class="control" type="tel" formControlName="phone_number" required>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('phone_number')">
-                    </control-messages>
-
+                <div>
+                    <label>Short Personal Presentation</label><br>
+                    <div class="align-control-validation">
+                        <textarea class="control" type="text" formControlName="personal_pres" cols="40" rows="5"
+                            required></textarea>
+                        <control-messages class="validation-div" [control]="this.applicationForm.get('personal_pres')">
+                        </control-messages>
+                    </div>
                 </div>
-            </div>
-
-            <div>
-                <div class="align-control-validation">
-                    <label class="control">Preffered way of communication</label><br>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('phone_or_email')">
-                    </control-messages>
-                </div>
-                <input class="radio-input" type="radio" formControlName="phone_or_email" value="Email">
-                <label>
-                    Email
-                </label>
-
-                <br />
-                <input class="radio-input" type="radio" formControlName="phone_or_email" value="Phone">
-                <label>
-                    Phone
-                </label>
-
-            </div>
-
-
-            <div>
-                <label>English level</label><br>
-                <div class="align-control-validation">
-                    <select class="control" formControlName="english_level">
-                        <option>Beginner</option>
-                        <option>Intermediate</option>
-                        <option>Advanced</option>
-                    </select>
-                    <control-messages class="validation-div" [control]=" this.applicationForm.get('english_level')">
-                    </control-messages>
+                <div>
+                    <fieldset class="checkbox">
+                        <legend>Study from home</legend>
+                        <input class="checkbox-input" formControlName="study_from_home" type="checkbox" value="1">
+                    </fieldset>
                 </div>
             </div>
         </div>
-        <div id="column2">
-
-            <div>
-                <label>Avaliable to Start</label><br>
-                <div class="align-control-validation">
-                    <input class="control" type="Date" dateformat="DD MMMM YYYY" formControlName="available_to_start"
-                        required>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('available_to_start')">
-                    </control-messages>
-                </div>
-            </div>
-            <div>
-                <label>Technical Skills and Courses</label><br>
-                <div class="align-control-validation">
-                    <textarea class="control" type="text" formControlName="skills_courses" cols="40" rows="5"
-                        required></textarea>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('skills_courses')">
-                    </control-messages>
-                </div>
-            </div>
-            <div>
-                <label>Short Personal Presentation</label><br>
-                <div class="align-control-validation">
-                    <textarea class="control" type="text" formControlName="personal_pres" cols="40" rows="5"
-                        required></textarea>
-                    <control-messages class="validation-div" [control]="this.applicationForm.get('personal_pres')">
-                    </control-messages>
-                </div>
-            </div>
-            <div>
-                <fieldset class="checkbox">
-                    <legend>Study from home</legend>
-                    <input class="checkbox-input" formControlName="study_from_home" type="checkbox" value="1">
-                </fieldset>
-            </div>
-        </div>
-
         <div id="column3">
             <button type="submit" class="button" [disabled]="!applicationForm.valid">
                 {{cancelUpdate == true ? 'Update Application' : 'Add Application'}}

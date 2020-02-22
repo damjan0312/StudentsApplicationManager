@@ -27,7 +27,8 @@
 }
 
 #students tr:hover {
-    background-color: rgb(134, 162, 212);
+    background-color: rgb(182, 182, 182);
+    color:black;
 }
 
 #students th {

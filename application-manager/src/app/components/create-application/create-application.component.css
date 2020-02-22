@@ -8,30 +8,46 @@
 #header{
     color: white;
     background-color: rgba(0, 96, 109, 0.87);
-    margin-bottom: 3%;
+    margin-bottom: 1%;
 }
 .form-div{
     display:flex;
-    flex-direction: row;
-    flex-flow: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
-
 }
+
+#col1-col2{
+    width: 100%;
+    flex: 100%;
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width: 900px){
+    #col1-col2{
+        width: 100%;
+        flex: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 #column1{
-    flex: 50%;
+    flex: 100%;
     margin:auto;
+    width: 100%;
 }
 #column2{
-    flex: 50%;
+    flex: 100%;
     margin: auto;
+    width: 100%;
 }
 #column3{
-
     flex:100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 
 input, select {
@@ -89,13 +105,8 @@ input, select {
 #cancelUpdate {
     float:right;
     background-color: rgba(255, 0, 0, 0.568);
+ 
 }
-#cancelUpdate:hover::after {
-    /* ------- THIS IS THE MAGIC ----------------*/
-    content: attr(data-message);
-    font-size: 0.75rem;
-}
-
 
 .checkbox, .radio {
   margin: 0 20% 0 20%;  
@@ -109,4 +120,26 @@ input, select {
 .checkbox-input, .radio-input{
     transform: scale(1.5);
 }
+
+#button-div{
+    width: 100%;
+    float: right;
+}
+
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    border-radius:20px;
+    padding: 5px 0;
+    float: right;
+    margin-right: 1em;
+  
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
